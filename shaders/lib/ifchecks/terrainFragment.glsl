@@ -141,6 +141,13 @@ if (mat > 100.5 && mat < 10000.0) {
                     emissive *= max(1.0 - albedo.b + albedo.r, 0.0)*5;
                     emissive *= lAlbedoP;
                 }
+				else if (material == 158.0) { // Jack o' lantern
+					if ((0.17*(albedo.r + albedo.g) > albedo.b) && (0.13*(albedo.r + albedo.g) < albedo.b)) {  // old 1.13 & below texture
+						emissive = 2.5;
+					} else if ((0.5*(albedo.r + albedo.g) > albedo.b) && (0.25*(albedo.r + albedo.g) < albedo.b)){  // default MC 1.14+ texture
+						emissive = 1.2;
+					}
+				}
                 else if (material == 160.0) { // Cauldron, Hopper, Anvils
                     if (color.r < 0.99) { // Cauldron Water
                         cauldron = 1.0, smoothness = 1.0, metalness = 0.0;

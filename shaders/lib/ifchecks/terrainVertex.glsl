@@ -422,8 +422,9 @@ if (lmCoord.x > 0.99) // Clamp full bright emissives
                             #ifdef COLORED_LIGHT
                                 lightVarying = 3.0,
                             #endif
-                            mat = 17000, color.rgb = vec3(0.54, 1.0, 0.15)*0.2,
-                            specR = 16, lmCoord.x = 0.92, specB = 16, mipmapDisabling = 1.0;
+							lmCoord.x = 0.8, specB = 0.01,
+                            mat = 158.0,
+                            quarterNdotUfactor = 0.0;
                         else if (mc_Entity.x == 11032) // Beacon
                             #ifdef COLORED_LIGHT
                                 lightVarying = 4.0,
