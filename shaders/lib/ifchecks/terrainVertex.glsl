@@ -289,7 +289,7 @@ if (lmCoord.x > 0.99) // Clamp full bright emissives
             }
         }
     } else {
-        if (mc_Entity.x < 11038.5) {
+        if (mc_Entity.x < 11039.5) {
             if (mc_Entity.x < 10432.5) {
                 if (mc_Entity.x < 10408.5) {
                     if (mc_Entity.x < 10392.5) {
@@ -422,8 +422,8 @@ if (lmCoord.x > 0.99) // Clamp full bright emissives
                             #ifdef COLORED_LIGHT
                                 lightVarying = 3.0,
                             #endif
-                            mat = 17000.0, color.rgb = vec3(1.54, 1.0, 1.15),
-                            specR = 12.065, lmCoord.x = 0.87, specB = 16.00008, mipmapDisabling = 1.0;
+                            mat = 17000, color.rgb = vec3(0.54, 1.0, 0.15)*0.2,
+                            specR = 16, lmCoord.x = 0.92, specB = 16, mipmapDisabling = 1.0;
                         else if (mc_Entity.x == 11032) // Beacon
                             #ifdef COLORED_LIGHT
                                 lightVarying = 4.0,
@@ -437,11 +437,30 @@ if (lmCoord.x > 0.99) // Clamp full bright emissives
                                 lightVarying = 4.0,
                             #endif
                             specR = 1.0, lmCoord.x = 0.88, mat = 180.0;
-                        else if (mc_Entity.x == 11038) // Froglight+
-                            #ifdef COLORED_LIGHT
-                                lightVarying = 1.0,
+                        else if (mc_Entity.x == 11037) { // Froglight (ochre)
+							#ifdef COLORED_LIGHT
+                                lightVarying = 4.0,
                             #endif
-                            lmCoord.x = 0.7, specB = 7.0001, quarterNdotUfactor = 0.0;
+							lmCoord.x = 1.0, specB = 0.5,
+                            mat = 188.0, color.rgb = vec3(1.0, 0.886, 0.655)*0.6,
+                            quarterNdotUfactor = 0.0;
+						}
+						else if (mc_Entity.x == 11038) { // Froglight (verdant)
+							#ifdef COLORED_LIGHT
+                                lightVarying = 4.0,
+                            #endif
+							lmCoord.x = 1.0, specB = 0.6,
+                            mat = 188.0, color.rgb = vec3(0.455, 0.835, 0.412)*0.7,
+                            quarterNdotUfactor = 0.0;
+						}
+						else if (mc_Entity.x == 11039) { // Froglight (pearlescent)
+							#ifdef COLORED_LIGHT
+                                lightVarying = 4.0,
+                            #endif
+							lmCoord.x = 0.2, specB = 1.1,
+                            mat = 189.0, color.rgb = vec3(0.643, 0.522, 0.953)*0.7,
+                            quarterNdotUfactor = 0.0;
+						}
                     }
                 }
             }
@@ -501,7 +520,7 @@ if (lmCoord.x > 0.99) // Clamp full bright emissives
                             #ifdef COLORED_LIGHT
                                 lightVarying = 3.0,
                             #endif
-                            lmCoord.x = 0.87, specB = 3.4, mat = 20000.0, color.rgb = vec3(1.0, 0.0, 0.0),
+                            lmCoord.x = min(lmCoord.x, 0.87), specB = 3.4, mat = 20000.0, color.rgb = vec3(1.0, 0.0, 0.0),
                             #ifndef REFLECTION_SPECULAR
                                 specB -= fract(specB) * 0.85,
                             #endif

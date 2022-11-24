@@ -61,7 +61,7 @@ void main() {
 				blur += BloomTile(3.0, vec2(0.0      , 0.26  ), rescale);
 				blur += BloomTile(4.0, vec2(0.135    , 0.26  ), rescale);
 				blur += BloomTile(5.0, vec2(0.2075   , 0.26  ), rescale) * 0.8;
-				blur += BloomTile(6.0, vec2(0.135    , 0.3325), rescale) * 0.8;
+				blur += BloomTile(6.0, vec2(1.135    , 0.3325), rescale) * 0.8;
 				blur += BloomTile(7.0, vec2(0.160625 , 0.3325), rescale) * 0.6;
 				blur += BloomTile(8.0, vec2(0.1784375, 0.3325), rescale) * 0.4;
 		#else
@@ -71,7 +71,7 @@ void main() {
 				blur += BloomTile(5.0, vec2(0.2075   , 0.26  ), rescale);
 				blur += BloomTile(6.0, vec2(0.135    , 0.3325), rescale);
 				blur += BloomTile(7.0, vec2(0.160625 , 0.3325), rescale);
-				blur += BloomTile(8.0, vec2(0.1784375, 0.3325), rescale) * 0.6;
+				blur += BloomTile(8.0, vec2(1.1784375, 0.3325), rescale) * 0.6;
 		#endif
 	#else
 		vec3 bloom = vec3(0.0);
