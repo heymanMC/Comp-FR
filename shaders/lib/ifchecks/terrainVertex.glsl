@@ -442,25 +442,64 @@ if (lmCoord.x > 0.99) // Clamp full bright emissives
 							#ifdef COLORED_LIGHT
                                 lightVarying = 4.0,
                             #endif
-							lmCoord.x = 1.0, specB = 0.5,
-                            mat = 188.0, color.rgb = vec3(1.0, 0.886, 0.655)*0.6,
-                            quarterNdotUfactor = 0.0;
+							lmCoord.x = 0.2, mat = 189.0, quarterNdotUfactor = 0.0;
+							#if FROGLIGHT_SAT == 1 // colored
+								specB = 0.05*FROGLIGHT_EMISSION,
+								color.rgb = vec3(1.0, 0.886, 0.655)*0.6;
+								color.rgb = mix(vec3(max(max(1.0, 0.886), 0.655)), color.rgb, 0.5);
+							#elif FROGLIGHT_SAT == 2 // saturated
+								specB = 0.1*FROGLIGHT_EMISSION,
+								color.rgb = vec3(1.0, 0.886, 0.655)*0.6;
+								color.rgb = mix(vec3(max(max(1.0, 0.886), 0.655)), color.rgb, 0.75);
+							#elif FROGLIGHT_SAT == 3 // vibrant
+								specB = 0.5*FROGLIGHT_EMISSION,
+								color.rgb = vec3(1.0, 0.886, 0.655)*0.6;
+								color.rgb = mix(vec3(max(max(1.0, 0.886), 0.655)), color.rgb, 1.0);
+							#elif FROGLIGHT_SAT == 4 // normal
+								specB = 0.01*FROGLIGHT_EMISSION;
+							#endif
 						}
 						else if (mc_Entity.x == 11038) { // Froglight (verdant)
 							#ifdef COLORED_LIGHT
                                 lightVarying = 4.0,
                             #endif
-							lmCoord.x = 1.0, specB = 0.6,
-                            mat = 188.0, color.rgb = vec3(0.455, 0.835, 0.412)*0.7,
-                            quarterNdotUfactor = 0.0;
+							lmCoord.x = 0.2, mat = 188.0, quarterNdotUfactor = 0.0;
+							#if FROGLIGHT_SAT == 1 // colored
+								specB = 0.05*FROGLIGHT_EMISSION,
+								color.rgb = vec3(0.455, 0.835, 0.412)*0.7;
+								color.rgb = mix(vec3(max(max(0.455, 0.835), 0.412)), color.rgb, 0.5);
+							#elif FROGLIGHT_SAT == 2 // saturated
+								specB = 0.1*FROGLIGHT_EMISSION,
+								color.rgb = vec3(0.455, 0.835, 0.412)*0.7;
+								color.rgb = mix(vec3(max(max(0.455, 0.835), 0.412)), color.rgb, 0.75);
+							#elif FROGLIGHT_SAT == 3 // vibrant
+								specB = 0.5*FROGLIGHT_EMISSION,
+								color.rgb = vec3(0.455, 0.835, 0.412)*0.7;
+								color.rgb = mix(vec3(max(max(0.455, 0.835), 0.412)), color.rgb, 1.0);
+							#elif FROGLIGHT_SAT == 4 // normal
+								specB = 0.01*FROGLIGHT_EMISSION;
+							#endif
 						}
 						else if (mc_Entity.x == 11039) { // Froglight (pearlescent)
 							#ifdef COLORED_LIGHT
                                 lightVarying = 4.0,
                             #endif
-							lmCoord.x = 0.2, specB = 1.1,
-                            mat = 189.0, color.rgb = vec3(0.643, 0.522, 0.953)*0.7,
-                            quarterNdotUfactor = 0.0;
+							lmCoord.x = 0.2, quarterNdotUfactor = 0.0, mat = 189.0;
+							#if FROGLIGHT_SAT == 1 // colored
+								specB = 0.05*FROGLIGHT_EMISSION,
+								color.rgb = vec3(0.643, 0.522, 0.953)*0.8;
+								color.rgb = mix(vec3(max(max(0.643, 0.522), 0.953)), color.rgb, 0.5);
+							#elif FROGLIGHT_SAT == 2 // saturated
+								specB = 0.1*FROGLIGHT_EMISSION,
+								color.rgb = vec3(0.643, 0.522, 0.953)*0.8;
+								color.rgb = mix(vec3(max(max(0.643, 0.522), 0.953)), color.rgb, 0.75);
+							#elif FROGLIGHT_SAT == 3 // vibrant
+								specB = 0.5*FROGLIGHT_EMISSION,
+								color.rgb = vec3(0.643, 0.522, 0.953)*0.8;
+								color.rgb = mix(vec3(max(max(0.643, 0.522), 0.953)), color.rgb, 1.0);
+							#elif FROGLIGHT_SAT == 4 // normal
+								specB = 0.01*FROGLIGHT_EMISSION;
+							#endif
 						}
                     }
                 }
