@@ -118,6 +118,13 @@ void main() {
 	#ifdef NO_FOLIAGE_SHADOWS
 		if (mat > 3.95 && mat < 4.05) discard;
 	#endif
+	
+	#ifdef NO_GLASS_SHADOWS
+		if (mat > 9.95 && mat < 10.05) discard;
+		#ifndef COLORED_SHADOWS
+			if(mat > 0.95 && mat < 1.05) discard;
+		#endif
+	#endif
 
 	vec4 albedo0 = albedo;
 	if (water > 0.5) {
@@ -209,6 +216,7 @@ void main() {
 		#endif
 		mat = 2;
 	}
+	if (mc_Entity.x == 10008) mat = 10; // clear glass
 	
 	float istopv = gl_MultiTexCoord0.t < mc_midTexCoord.t ? 1.0 : 0.0;
 	position.xyz += WavingBlocks(position.xyz, istopv, lmCoord.y);

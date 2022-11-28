@@ -232,6 +232,7 @@ Complementary Shaders by EminGT, based on BSL Shaders by Capt Tatsu
     //#define COLORED_SHADOWS
     //#define CLOUD_SHADOW
     //#define NO_FOLIAGE_SHADOWS
+	//#define NO_GLASS_SHADOWS
     #define PIXEL_SHADOWS 0 //[0 8 16 32 64 128]
     #define BLOCK_ENTITY_SHADOWS
     #define ENTITY_SHADOWS

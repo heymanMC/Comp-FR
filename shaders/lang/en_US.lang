@@ -51,6 +51,8 @@ screen.DOF.comment=Settings about the blur effect.
 
 screen.SHADOWS=Shadows
 screen.SHADOWS.comment=Settings about shadows.
+screen.SHADOWDISC=Shadow Rendering
+screen.SHADOWDISC.comment=Which items to ignore when rendering shadows.
 screen.SUBSURFACE=Subsurface Scattering Settings
 screen.SUBSURFACE.comment=Settings about subsurface scattering.
 
@@ -679,6 +681,9 @@ option.CLOUD_SHADOW.comment=Adds occasional big shadows on the terrain to simula
 
 option.NO_FOLIAGE_SHADOWS=No Foliage Shadows
 option.NO_FOLIAGE_SHADOWS.comment=Disables shadows cast by things like grass and flowers. §e[*]§r This setting does not affect performance.
+
+option.NO_GLASS_SHADOWS=No Glass Shadows
+option.NO_GLASS_SHADOWS.comment=Disables shadows cast by clear glass. Additionally disables shadows for Colored Glass if Colored Shadows are disabled. §e[*]§r This setting does not affect performance.
 
 option.PIXEL_SHADOWS=Pixelated Shadows
 option.PIXEL_SHADOWS.comment=Modifies the world coordinates on a grid to make shadows pixelated. §e[*]§r This setting does not affect performance.
